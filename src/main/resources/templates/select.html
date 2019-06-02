@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+<!--    <title>Title</title>-->
+</head>
+<body>
+
+    <h1 th:text="${title}"></h1>
+
+<!--<h1> Wybierz droge</h1>-->
+
+    <table>
+<!--        <tr bgcolor="yellow">-->
+
+        <tr th:each="colorsRow : ${routs}"}>
+
+<!--            <td width="100px" height="100px">tdtdtd</td>-->
+<!--            <td width="100px" height="100px">fdfd</td>-->
+<!--            <td width="100px" height="100px">fdfdf</td>-->
+<!--            <td width="100px" height="100px">fdfdfdfd</td>-->
+
+
+            <td width="100px" height="100px"
+                th:each="rout : ${colorsRow}"
+                th:attr="bgcolor=${rout}"
+
+                th:onclick="'location.href= \'' + @{/select/{c}(c=${rout})} + '  \'    '">
+                <!--                th:onclick="location.href='/select/red'">-->
+<!--                th:onclick="'location.href= \'' + @{/select/{c}(c=${color})} + '  \'            '">-->
+<!--            >-->
+
+            </td>
+<!--            &lt;!&ndash;<td width="100px" height="100px">afdfdf</td>&ndash;&gt;-->
+<!--            &lt;!&ndash;<td width="100px" height="100px">kakka</td>&ndash;&gt;-->
+        </tr>
+    </table>
+
+</body>
+</html>
