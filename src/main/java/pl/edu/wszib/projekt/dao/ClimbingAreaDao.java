@@ -2,16 +2,13 @@ package pl.edu.wszib.projekt.dao;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-
-import pl.edu.wszib.projekt.domain.SelectedRout;
+import pl.edu.wszib.projekt.domain.ClimbingArea;
 
 import java.util.List;
 
 @Repository
-public interface SelectedRoutDao extends CrudRepository<SelectedRout, Integer> {
+public interface ClimbingAreaDao extends CrudRepository<ClimbingArea,Integer> {
 
-    List<SelectedRout> findByRout(String rout);
-
+    List<ClimbingArea> findByRoutn(String routn);
 
 }

@@ -14,7 +14,15 @@ public class SelectedRout {
     private String rout;
     private Date ctime;
 
+//    @ManyToOne // wiele selectedRouts może mieć jedną climbingArea
+//    @JoinColumn(name = "rejon") // to jest nazwa nowej kolumny w SelectedRout
+//    // ClimbingArea climbingArea;
+
     public SelectedRout() {
+    }
+
+    public SelectedRout(String rout) {
+        this.rout = rout;
     }
 
     public SelectedRout(String rout, Date ctime) {
@@ -45,4 +53,12 @@ public class SelectedRout {
     public void setCtime(Date ctime) {
         this.ctime = ctime;
     }
+
+//    public ClimbingArea getClimbingArea() {
+//        return climbingArea;
+//    }
+//
+//    public void setClimbingArea(ClimbingArea climbingArea) {
+//        this.climbingArea = climbingArea;
+//    }
 }

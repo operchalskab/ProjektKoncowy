@@ -14,27 +14,51 @@
     <table>
 <!--        <tr bgcolor="yellow">-->
 
-        <tr th:each="colorsRow : ${routs}"}>
+        <thead>
+            <th width="50px">Lp</th>
+            <th width="100px">Droga</th>
+        </thead>
 
-<!--            <td width="100px" height="100px">tdtdtd</td>-->
-<!--            <td width="100px" height="100px">fdfd</td>-->
-<!--            <td width="100px" height="100px">fdfdf</td>-->
-<!--            <td width="100px" height="100px">fdfdfdfd</td>-->
+        <tbody>
+
+            <tr th:each="rout,iterStat : ${routs}">
+                <td width="50px" th:text="${iterStat.index}"></td>
+                <td width="100px" th:text="${rout}"
+                    th:onclick="'location.href= \'' + @{/select/{c}(c=${rout})} + '  \'    '"></td>
+            </tr>
+
+        </tbody>
+
+<!--    //th:each - piewsze to pojedynczy element listy, drugi to  nazwa obiektu która jest zadeklaraowy w kontrolerze: w nawiasie po model.addArbitube-->
+<!--            <td width="100px" height="100px"-->
+<!--                th:each="rout : ${routs}"-->
+<!--            th:text="${routs}"></td>-->
 
 
-            <td width="100px" height="100px"
-                th:each="rout : ${colorsRow}"
-                th:attr="bgcolor=${rout}"
 
-                th:onclick="'location.href= \'' + @{/select/{c}(c=${rout})} + '  \'    '">
-                <!--                th:onclick="location.href='/select/red'">-->
-<!--                th:onclick="'location.href= \'' + @{/select/{c}(c=${color})} + '  \'            '">-->
-<!--            >-->
 
-            </td>
-<!--            &lt;!&ndash;<td width="100px" height="100px">afdfdf</td>&ndash;&gt;-->
-<!--            &lt;!&ndash;<td width="100px" height="100px">kakka</td>&ndash;&gt;-->
-        </tr>
+
+<!--        <tr th:each="colorsRow : ${routs}"}>-->
+
+<!--&lt;!&ndash;            <td width="100px" height="100px">tdtdtd</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td width="100px" height="100px">fdfd</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td width="100px" height="100px">fdfdf</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td width="100px" height="100px">fdfdfdfd</td>&ndash;&gt;-->
+
+
+<!--            <td width="100px" height="100px"-->
+<!--                th:each="rout : ${colorsRow}"-->
+<!--                th:attr="bgcolor=${rout}"-->
+
+<!--                th:onclick="'location.href= \'' + @{/select/{c}(c=${rout})} + '  \'    '">-->
+<!--                &lt;!&ndash;                th:onclick="location.href='/select/red'">&ndash;&gt;-->
+<!--&lt;!&ndash;                th:onclick="'location.href= \'' + @{/select/{c}(c=${color})} + '  \'            '">&ndash;&gt;-->
+<!--&lt;!&ndash;            >&ndash;&gt;-->
+
+<!--            </td>-->
+<!--&lt;!&ndash;            &lt;!&ndash;<td width="100px" height="100px">afdfdf</td>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;<td width="100px" height="100px">kakka</td>&ndash;&gt;&ndash;&gt;-->
+<!--        </tr>-->
     </table>
 
 </body>
